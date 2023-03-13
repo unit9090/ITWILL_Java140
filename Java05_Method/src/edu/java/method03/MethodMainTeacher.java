@@ -169,7 +169,7 @@ public class MethodMainTeacher {
     	}
     	
     	//================================================    	
-    	int minAt;
+    	int minAt = 0;
     	int minVal1 = min(arr);
     	for(int i = 0; i < arr.length; i++) {
     		if(minVal1 == arr[i]) {
@@ -177,6 +177,7 @@ public class MethodMainTeacher {
     			break;
     		}
     	}
+    	System.out.println(minAt);
     	
     	
     	return index;	// 반복문이 종료됐을 때의 인덱스를 리턴.

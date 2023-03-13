@@ -190,6 +190,8 @@ public class Homework01 {
 		}
 		
 		*/
+		
+		scanner.close();
 	}
 
 }

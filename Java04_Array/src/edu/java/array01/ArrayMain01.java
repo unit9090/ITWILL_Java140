@@ -11,7 +11,7 @@ public class ArrayMain01 {
 		
 		// 정수(int) 4개를 저장할 수 있는 배열 선언, 초기화.
 		int[] scores = new int[4];
-		int arr[] = new int [10];	// 대괄호의 위치를 이런 식으로 변경할 수 있다.
+//		int arr[] = new int [10];	// 대괄호의 위치를 이런 식으로 변경할 수 있다.
 		
 		// 배열의 특정 인덱스에 원소를 저장(재할당)
 		scores[0] = 100;

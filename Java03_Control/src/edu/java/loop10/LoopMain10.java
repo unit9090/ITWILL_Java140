@@ -63,6 +63,7 @@ public class LoopMain10 {
 		
 		// Ctrl + Shift + p : 해당 함수 시작과 끝으로 이동
 		
+		scanner.close();
 	}
 
 }

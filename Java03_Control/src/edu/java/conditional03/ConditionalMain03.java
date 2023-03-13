@@ -50,6 +50,8 @@ public class ConditionalMain03 {
 		} else {
 			System.out.println("학점: F");
 		}
+		
+		sc.close();
 
 	}
 
