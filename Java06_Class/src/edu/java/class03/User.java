@@ -47,6 +47,9 @@ public class User {
 	}
 	
 	// 생성자 오버로딩(overloading): 파라미터가 다른 생성자를 여러개 정의하는 것.
+	// this의 의미(기능):
+	// (1) 생성된 객체(인스턴스) - 인스턴스의 필드와 지역 변수를 구별하기 위한 용도.
+	// (2) overloading된 다른 생성자 호출.
 	
 	// method
 	public void printUserInfo() {
