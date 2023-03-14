@@ -24,6 +24,8 @@ public class Account {
      */
     public double deposit(double amount) {
     	this.balance += amount;
+    	System.out.println("계좌번호) " + this.accountNo + ": " + amount + "원 입금되었습니다.");
+    	System.out.println();
     	return balance;
     }
     
@@ -35,6 +37,8 @@ public class Account {
      */
     public double withdraw(double amount) {
     	this.balance -= amount;
+    	System.out.println("계좌번호) " + this.accountNo + ": " + amount + "원 입금되었습니다.");
+    	System.out.println();
     	return balance;
     }
     
@@ -48,6 +52,9 @@ public class Account {
     public boolean transfer(Account to, double amount) {
     	this.balance -= amount;    	
     	to.balance += amount;
+    	
+    	System.out.println("계좌번호) " + this.accountNo + ": " + amount + "원 이체되었습니다.");
+    	System.out.println();
     	
     	return true;
     }
