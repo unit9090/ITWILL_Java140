@@ -53,7 +53,7 @@ public class Account {
     	this.balance -= amount;    	
     	to.balance += amount;
     	
-    	System.out.println("계좌번호) " + this.accountNo + ": " + amount + "원 이체되었습니다.");
+    	System.out.println("계좌번호 " + to.accountNo + "에 " + amount + "원 이체되었습니다.");
     	System.out.println();
     	
     	return true;
