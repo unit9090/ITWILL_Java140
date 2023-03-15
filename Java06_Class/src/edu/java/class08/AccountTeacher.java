@@ -5,16 +5,17 @@ package edu.java.class08;
  * 필드: 계좌번호, 잔액.
  * 메서드: 입금, 출금, 이체, 정보 출력.
  */
-public class Account {
+public class AccountTeacher {
     // field
     int accountNo; // 계좌번호
     double balance; // 잔고
     
     // TODO: argument 2개를 갖는 생성자
-    public Account(int accountNo, double balance) {
+    public AccountTeacher(int accountNo, double balance) {
     	this.accountNo = accountNo;
     	this.balance = balance;
     }
+    
 
     /**
      * 입금(deposit)
@@ -24,9 +25,7 @@ public class Account {
      */
     public double deposit(double amount) {
     	this.balance += amount;
-    	System.out.println("계좌번호) " + this.accountNo + ": " + amount + "원 입금되었습니다.");
-    	System.out.println();
-    	return balance;
+    	return this.balance;
     }
     
     /**
@@ -37,10 +36,9 @@ public class Account {
      */
     public double withdraw(double amount) {
     	this.balance -= amount;
-    	System.out.println("계좌번호) " + this.accountNo + ": " + amount + "원 출금되었습니다.");
-    	System.out.println();
-    	return balance;
+    	return this.balance;
     }
+    
     
     /**
      * 이체(transfer).
@@ -49,13 +47,12 @@ public class Account {
      * @param amount 이체할 금액(double).
      * @return true.
      */
-    public boolean transfer(Account to, double amount) {
-    	this.balance -= amount;    	
-    	to.balance += amount;
+    public boolean transfer(AccountTeacher to, double amount) {
+//    	this.balance -= amount;
+//    	to.balance += amount;
     	
-    	System.out.println("계좌번호 " + to.accountNo + "에 " + amount + "원 이체되었습니다.");
-    	System.out.println();
-    	
+    	this.withdraw(amount);
+    	to.deposit(amount);
     	
     	return true;
     }
@@ -65,10 +62,7 @@ public class Account {
      * 계좌 번호와 잔고를 출력.
      */
     public void printInfo() {
-    	System.out.println(">>> 계좌 정보 <<<");
-    	System.out.println("계좌번호: " + this.accountNo);
-    	System.out.println("잔고: " + this.balance);
-    	System.out.println("-------------------------");
-    	System.out.println();
+    	System.out.printf("계좌정보(번호: %d, 잔액: %f)\n", accountNo, balance);
     }
+    
 }

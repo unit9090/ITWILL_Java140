@@ -6,6 +6,7 @@ public class Student {
 	int stuNo;		// 학생 번호(학번)
 	String name;	// 학생 이름
 	Score score;	// 학생 (Java, SQL, HTML)시험 점수
+
 	
 	// constructor
 	// -- 기본 생성자
