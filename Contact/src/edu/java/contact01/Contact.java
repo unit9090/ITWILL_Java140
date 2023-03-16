@@ -57,5 +57,4 @@ public class Contact {
 				this.cid, this.name, this.phone, this.email);
 	}
 	
-	
 }

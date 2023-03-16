@@ -35,10 +35,10 @@ public class ContactMain01 {
 					app.searchIndex();
 					break;
 				case 4:		// 연락처 이름/전화번호/이메일 정보 수정하기
-					app.updateContect();
+					app.updateContact();
 					break;
 				case 5:		// 배열의 인덱스로 연락처 삭제하기
-					app.deleteContect();
+					app.deleteContact();
 					break;
 				default:
 					System.out.println("메인 메뉴 번호를 확인하세요...");
@@ -83,7 +83,7 @@ public class ContactMain01 {
 			
 			// 입력받은 정보들로 Contact 타입의 객체를 생성.
 			Contact c = new Contact(count, name, phone, email);
-			
+
 			// 생성된 Contact 타입의 객체를 배열에 저장.
 			contacts[count] = c;
 			
@@ -102,9 +102,11 @@ public class ContactMain01 {
 		
 		if(count != 0) {
 			System.out.println("--- 모든 연락처 ---");
-			for(int i = 0; i < count; i++) {			
-				System.out.printf("번호 %d) name = %s, phone = %s, email = %s\n",
-						contacts[i].getCid(), contacts[i].getName(), contacts[i].getPhone(), contacts[i].getEmail());
+			for(int i = 0; i < count; i++) {
+				if(contacts[i].getName() != null) {
+					System.out.printf("번호 %d) name = %s, phone = %s, email = %s\n",
+							contacts[i].getCid(), contacts[i].getName(), contacts[i].getPhone(), contacts[i].getEmail());
+				}
 			}
 		} else {
 			System.out.println("저장된 연락처가 없습니다.");
@@ -131,8 +133,8 @@ public class ContactMain01 {
 				
 	}
 	
-	// 연락처 이름/전화번호/이메일 정보 수정하기 => updateContect()
-	public void updateContect() {
+	// 연락처 이름/전화번호/이메일 정보 수정하기 => updateContact()
+	public void updateContact() {
 		System.out.println();
 		
 		if(count == 0) {
@@ -166,8 +168,8 @@ public class ContactMain01 {
 		
 	}
 	
-	// 배열의 인덱스로 연락처 삭제하기 => deleteContect()
-	public void deleteContect() {
+	// 배열의 인덱스로 연락처 삭제하기 => deleteContact()
+	public void deleteContact() {
 		System.out.println();
 		
 		if(count == 0) {
@@ -178,6 +180,10 @@ public class ContactMain01 {
 			int num = Integer.parseInt(scanner.nextLine());
 			
 			if(num >= 0 && num <= (count - 1)) {
+				if(num == 4) {
+					Contact contact = new Contact();
+					contacts[num] = contact;
+				}
 				
 				for(int i = num; i < MAX_LENGTH - (num + 1); i++) {
 					contacts[i].setCid(contacts[i + 1].getCid() - 1);
