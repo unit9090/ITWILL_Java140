@@ -47,7 +47,7 @@ public class User {
 		
 		if(obj instanceof User) {
 			User other = (User) obj;
-			check = (this.userId.equals(other.userId));
+			check = (this.userId != null) && (this.userId.equals(other.userId));
 		}
 		
 		return check;
@@ -55,8 +55,15 @@ public class User {
 	
 	// hashCode() override
 	@Override
+	// equals()의 결과가 true이면 hashCode()의 리턴 값이 같다.
 	public int hashCode() {
 //		return userId.hashCode() * 1000;
-		return Objects.hash(userId);
+//		return Objects.hash(userId);
+		if(this.userId == null) {
+			return 0;
+		} else {
+			return this.userId.hashCode();
+//			return this.userId.charAt(0); //-> index 0번에 있는 문자를 return
+		}
 	}
 }
