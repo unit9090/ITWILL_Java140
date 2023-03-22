@@ -3,7 +3,7 @@ package edu.java.inheritance09;
 import java.util.Scanner;
 
 enum Menu {
-	// enum 상수(public static final 변수) 선언
+	// enum 열거형 상수(public static final Menu 타입 변수) 선언
 	QUIT, CREATE, READ_ALL, READ_BY_INDEX, UPDATE, DELETE, UNKNOWN;
 	
 	// method
@@ -23,6 +23,7 @@ enum Menu {
 		Menu[] menu = Menu.values();
 		return menu[n];
 	}
+	
 	
 }
 
