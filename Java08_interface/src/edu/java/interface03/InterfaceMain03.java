@@ -20,6 +20,7 @@ interface I extends E, F {}
 // interface J extends A {}	//-> 문법 오류. 상위 인터페이스는 인터페이스만 가능.
 
 interface Buyer {
+	static void test() {}
 	void buy();		// public abstract 메서드
 	
 	// default (인스턴스) 메서드
@@ -29,6 +30,7 @@ interface Buyer {
 }
 
 interface Seller {
+	static void test() {}
 	void sell();	// public abstract 메서드
 	
 	// default (인스턴스) 메서드
@@ -48,13 +50,16 @@ class User implements Buyer, Seller {	// default 메서드의 이름이 같아�
 		System.out.println("판매...");
 	}
 	
-	// 중복되는 default, static 메서드가 2개의 인터페이스에 있는 경우에는 반드시 override 해야 함.
+	// 중복되는 default 메서드가 2개의 인터페이스에 있는 경우에는 반드시 override 해야 함.
+	// static 메서드는 부모클래스.static메서드명으로 부르기 때문에 static 메서드는 override 하지 않아도 된다.
 	@Override
 	public void register() {
 		// 상위인터페이스.super.메서드() 호출
 		Buyer.super.register();		// Buyer 인터페이스의 default 메서드가 호출됨.
 		Seller.super.register();	// Seller 인터페이스의 default 메서드가 호출됨.		
 	}
+	
+	
 }
 
 public class InterfaceMain03 {
