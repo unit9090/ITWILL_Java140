@@ -1,20 +1,7 @@
 package edu.java.contact02;
 
 import java.util.Scanner;
-
-enum Menu {
-	QUIT, CREATE, READ_ALL, READ_BY_INDEX, UPDATE, DELETE, UNKNOWN;
-	
-	public static Menu getValue(int n) {		
-		if(n > Menu.values().length || n < 0) {
-			Menu[] menu = Menu.values();
-			return menu[6];
-		}
-		
-		Menu[] menu = Menu.values();
-		return menu[n];
-	}
-}
+import edu.java.contact.menu.Menu;
 
 
 public class ContactMain02 {
@@ -76,22 +63,21 @@ public class ContactMain02 {
 		
 		// 콘솔 창에서 입력된 문자열 1개 라인을 정수(int)로 변환.
 		System.out.print("선택> ");
-		int result = inputInteger();
+		int result = inputNumber();
 		
 		return result;
 		
 	}
 	
 	// 정수가 아닐 시 exception
-	public int inputInteger() {
+	public int inputNumber() {
 		int result = 0;
 		while(true) {
 			try {				
 				result = Integer.parseInt(scanner.nextLine());
 				break;
 			} catch(NumberFormatException e) {
-				System.out.println("정수로 입력해주세요...");
-				System.out.print("선택> ");
+				System.out.print("정수로 입력> ");
 			}
 		}
 		
@@ -133,7 +119,7 @@ public class ContactMain02 {
 	public void selectAllContacts() {
 		System.out.println("--- 연락처 목록 ---");
 		for(int i = 0; i < count; i++) {
-			contacts[i].printInfo();
+			System.out.println(contacts[i]);
 		}
 		
 	}
@@ -142,10 +128,10 @@ public class ContactMain02 {
 	public void selectContactByIndex() {
 		System.out.println("--- 인덱스 검색 ---");
 		System.out.print("검색할 인덱스 입력> ");
-		int index = inputInteger();
+		int index = inputNumber();
 		
 		if(index >= 0 && index < count) {
-			contacts[index].printInfo();
+			System.out.println(contacts[index]);
 		} else {
 			System.out.println("해당 번호에 저장된 연락처는 없습니다.");
 		}
@@ -154,8 +140,8 @@ public class ContactMain02 {
 	// 연락처 이름/전화번호/이메일 정보 수정하기 => updateContactByIndex()
 	public void updateContactByIndex() {
 		System.out.println("--- 연락처 수정 ---");
-		System.out.println("수정할 연락처 인덱스 입력 > ");
-		int index = inputInteger();
+		System.out.print("수정할 연락처 인덱스 입력 > ");
+		int index = inputNumber();
 		
 		if(index < 0 || index >= count) {
 			System.out.println("해당 번호에 저장된 연락처는 없습니다.");
@@ -163,7 +149,7 @@ public class ContactMain02 {
 		}
 		
 		System.out.print("수정 전: ");
-		contacts[index].printInfo();
+		System.out.println(contacts[index]);
 		
 		System.out.print("수정할 이름 입력> ");
 		String name = scanner.nextLine();
@@ -176,15 +162,15 @@ public class ContactMain02 {
 		contacts[index] = new Contact(0, name, phone, email);
 		
 		System.out.print("수정 후: ");
-		contacts[index].printInfo();
+		System.out.println(contacts[index]);
 		
 	}
 	
 	// 배열의 인덱스로 연락처 삭제하기 => deleteContactByIndex()
 	public void deleteContactByIndex() {
 		System.out.println("--- 연락처 삭제 ---");
-		System.out.println("삭제할 연락처 인덱스 입력> ");
-		int index = inputInteger();
+		System.out.print("삭제할 연락처 인덱스 입력> ");
+		int index = inputNumber();
 		
 		if(index < 0 || index >= count) {
 			System.out.println("해당 번호에 저장된 연락처는 없습니다.");
