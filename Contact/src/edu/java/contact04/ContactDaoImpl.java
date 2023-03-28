@@ -65,9 +65,11 @@ public class ContactDaoImpl implements ContactDao {
 			return 0;
 		}
 		
-		contacts.get(index).setName(contact.getName());
-		contacts.get(index).setPhone(contact.getPhone());
-		contacts.get(index).setEmail(contact.getEmail());
+//		contacts.get(index).setName(contact.getName());
+//		contacts.get(index).setPhone(contact.getPhone());
+//		contacts.get(index).setEmail(contact.getEmail());
+		
+		contacts.set(index, contact);
 		
 		return 1;
 	}
