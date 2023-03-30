@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class FileMain07 {
 
@@ -16,7 +17,11 @@ public class FileMain07 {
 		ArrayList<Student> students = new ArrayList<>();
 		
 		// 2. 1,000,000개의 Student 객체를 리스트에 저장 - Random
+//		Random rand = new Random();
+		
 		for(int i = 0; i < 1_000_000; i++) {
+//			Score score = new Score(rand.nextInt(101), rand.nextInt(101), rand.nextInt(101));
+			
 			Score score = new Score((int)(Math.random() * 101),
 									(int)(Math.random() * 101),
 									(int)(Math.random() * 101));

@@ -47,8 +47,11 @@ public class Student implements Serializable {
 	// toString
 	@Override
 	public String toString() {
-		return String.format("Student(id = %d, name = %s, score = {java = %d, web = %d, python = %d})",
-				this.id, this.name, this.score.getJava(), this.score.getWeb(), this.score.getPython());
+//		return String.format("Student(id = %d, name = %s, score = {java = %d, web = %d, python = %d})",
+//				this.id, this.name, this.score.getJava(), this.score.getWeb(), this.score.getPython());
+		
+		return String.format("Student(id= %d, name = %s, score = %s)",
+								id, name, score);
 	}
 	
 	
