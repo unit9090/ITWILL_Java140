@@ -34,8 +34,10 @@ public class FileUtil {
 		File newFolder = new File(DATA_DIR);
 		if(!newFolder.exists()) {
 			newFolder.mkdir();
+			System.out.println("데이터 폴더 생성");
 		}
 		
+		System.out.println("데이터 폴더가 이미 있습니다.");
 		return newFolder;
 	}
 	
@@ -48,17 +50,19 @@ public class FileUtil {
 	 * @return Contact 타입을 원소로 갖는 리스트(List).List<Contact>
 	 */
 	public static List<Contact> readDataFromFile(File file) {
+		List<Contact> result = new ArrayList<>();
+		
 		try(	FileInputStream in = new FileInputStream(file);
 				BufferedInputStream bin = new BufferedInputStream(in);
 				ObjectInputStream oin = new ObjectInputStream(bin);) {
 			
-			List<Contact> result = (ArrayList<Contact>) oin.readObject();
-			return result;
+			result = (ArrayList<Contact>) oin.readObject();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
 		}
 		
+		return result;
 	}
 	
 	
@@ -91,7 +95,8 @@ public class FileUtil {
 	 * @return Contact 타입을 원소로 갖는 리스트(List<Contact>). 
 	 */
 	public static List<Contact> initData() {
-		File file = new File(DATA_DIR + File.separator + DATA_FILE);
+//		File file = new File(DATA_DIR + File.separator + DATA_FILE);
+		File file = new File(DATA_DIR, DATA_FILE);	// .\data\contacts.dat 파일 객체
 		
 		List<Contact> contacts = null;
 		if(file.exists()) {
