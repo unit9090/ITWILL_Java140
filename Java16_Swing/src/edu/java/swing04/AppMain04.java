@@ -106,7 +106,7 @@ public class AppMain04 {
 //			}
 //		}
 //		
-//		ImageIcon mario = new ImageIcon("images/image" + count + ".jpg");
+//		ImageIcon mario = new ImageIcon("images/image" + (count + 1) + ".jpg");
 //		lblImage.setIcon(mario);
 		
 		
