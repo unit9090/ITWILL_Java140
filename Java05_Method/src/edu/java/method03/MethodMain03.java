@@ -46,7 +46,6 @@ public class MethodMain03 {
      * @param arr 정수 배열.
      * @return 배열 arr의 모든 원소들의 합.
      */
-    // TODO
 	public static int sum(int[] arr) {
 		int sum = 0;
 		for(int x : arr) {
@@ -62,7 +61,6 @@ public class MethodMain03 {
      * @param arr 정수 배열.
      * @return 배열 arr의 모든 원소들의 평균.
      */
-    // TODO
 	public static double mean(int[] arr) {
 		double avg = (double) sum(arr) / arr.length;
 		
@@ -75,7 +73,6 @@ public class MethodMain03 {
      * @param arr 정수 배열.
      * @return 배열 arr의 원소들 중 최댓값.
      */
-    // TODO
 	public static int max(int[] arr) {
 		int max = arr[0];
 		for(int x : arr) {

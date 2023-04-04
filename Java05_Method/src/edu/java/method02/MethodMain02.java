@@ -66,7 +66,6 @@ public class MethodMain02 {
      * @param y double.
      * @return x - y.
      */
-    // TODO
 	public static double subtract(double x, double y) {
 		return x - y;
 	}
@@ -78,7 +77,6 @@ public class MethodMain02 {
      * @param y double.
      * @return x * y.
      */
-    // TODO
 	public static double multiply(double x, double y) {
 		return x * y;
 	}
@@ -90,7 +88,6 @@ public class MethodMain02 {
      * @param y double.
      * @return x / y.
      */
-    // TODO
 	public static double divide(double x, double y) {
 		return x / y;
 	}
@@ -101,7 +98,6 @@ public class MethodMain02 {
      * @param n 짝수인 지 홀수인 지 검사할 정수.
      * @return n이 짝수이면 true, 그렇지 않으면 false.
      */
-    // TODO
 	public static boolean isEven(int n) {
 		boolean result = false;
 		
@@ -122,7 +118,6 @@ public class MethodMain02 {
      * @param length 배열의 길이. 양의 정수.
      * @return length개의 난수들로 초기화된 정수 배열.
      */
-    // TODO
 	public static int[] makeArray(int length) {
 		Random random = new Random();
 		int[] array = new int [length];

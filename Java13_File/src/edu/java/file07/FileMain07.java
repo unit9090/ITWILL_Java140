@@ -12,7 +12,6 @@ import java.util.Random;
 public class FileMain07 {
 
 	public static void main(String[] args) {
-		// TODO 
 		// 1. ArrayList<Student> 객체 생성
 		ArrayList<Student> students = new ArrayList<>();
 		
