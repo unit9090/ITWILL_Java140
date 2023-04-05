@@ -61,7 +61,7 @@ public class AppMain07 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 461, 641);
+		frame.setBounds(100, 100, 461, 548);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -122,7 +122,7 @@ public class AppMain07 {
 		frame.getContentPane().add(btnDelete);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 262, 421, 330);
+		scrollPane.setBounds(12, 262, 421, 237);
 		frame.getContentPane().add(scrollPane);
 		
 		table = new JTable();
@@ -146,7 +146,12 @@ public class AppMain07 {
 			JOptionPane.showMessageDialog(frame, "등록되어 있는 점수가 없습니다.");
 			return;
 		} else {
-			model.removeRow(0);
+			int index = table.getSelectedRow();
+			if(index == -1) {
+				JOptionPane.showMessageDialog(frame, "삭제할 행을 선택해주세요.");
+				return;
+			}
+			model.removeRow(index);
 		}
 	}
 
