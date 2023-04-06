@@ -151,7 +151,17 @@ public class AppMain07 {
 				JOptionPane.showMessageDialog(frame, "삭제할 행을 선택해주세요.");
 				return;
 			}
-			model.removeRow(index);
+			
+			int confirm = JOptionPane.showConfirmDialog(
+					  frame
+					, index + "인덱스 행을 정말 삭제할까요?"
+					, "삭제 확인"
+					, JOptionPane.YES_NO_OPTION
+			);
+			
+			if(confirm == JOptionPane.YES_OPTION) {
+				model.removeRow(index);
+			}			
 		}
 	}
 
