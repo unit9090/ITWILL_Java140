@@ -7,6 +7,16 @@ import java.io.Serializable;
 // VO(Value Object): 값(자료)를 표현하는 객체.
 // DTO(Data Transfer Object): 데이터를 전달(메서드 아규먼트, 리턴 값)할 때 사용되는 객체.
 public class Contact implements Serializable {
+	
+	// 오라클 DB 테이블 이름과 컬럼 이름들을 상수로 정의.
+	public interface Entity {
+		String TBL_NAME = "CONTACTS";	// 테이블 이름
+		String COL_CID = "CID";			// PK
+		String COL_NAME = "NAME";
+		String COL_PHONE = "PHONE";
+		String COL_EMAIL = "EMAIL";
+	}
+	
 	// fields
 	private int cid;		// 연락처 고유 번호
 	private String name;	// 이름
@@ -15,6 +25,13 @@ public class Contact implements Serializable {
 	
 	// constructor
 	public Contact() {};
+	
+	public Contact(String name, String phone, String email) {
+		super();
+		this.name = name;
+		this.phone = phone;
+		this.email = email;
+	}
 	
 	public Contact(int cid, String name, String phone, String email) {
 		super();
